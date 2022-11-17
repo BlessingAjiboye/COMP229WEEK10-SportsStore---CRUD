@@ -9,7 +9,7 @@
       </tr>
   </thead>
   <tbody>
-      <tr *counter="let p of getProducts()">
+      <tr *ngFor="let p of getProducts()">
           <td>{{p.id}}</td>
           <td>{{p.name}}</td>
           <td>{{p.category}}</td>
