@@ -6,16 +6,17 @@ import { Cart } from "./cart.model";
 import { Order } from "./order.model";
 import { map, switchMap } from "rxjs/operators";
 import { HttpHeaders } from '@angular/common/http';
+import { environment } from "src/environments/environment";
 
-const PROTOCOL = "http";
-const PORT = 3500;
+
 @Injectable()
 export class RestDataSource {
   baseUrl: string;
   auth_token!: string;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+    this.baseUrl = environment.apiURL;
+    if (environment.production) console.log('==== Production Mode ====');
   }
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl + "products");

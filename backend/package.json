@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Fake backend for SportsStore app",
+  "scripts": {
+    "start": "json-server data.js -p 3500 -m authMiddleware.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
